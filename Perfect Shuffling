@@ -1,0 +1,32 @@
+This assignment closes November 3, 2024 at 23:15.
+
+Perfect Shuffling
+Perfect Shuffling of a deck of cards with an even number of cards works as follows:
+
+The deck is split into two equal halves and those stacks are shuffled together by alternately taking one card from each stack and putting it into a new stack.
+
+Example: If the original deck consists of the cards H1, H2, H3, H4, H5, H6 then the two halves are H1, H2, H3 and H4, H5, H6 respectivly which after shuffling yield the deck H1, H4, H2, H5, H3, H6.
+
+For simplicity, we represent a deck of cards as an array of integer numbers.
+
+Task 1
+Write a Python method interleave(a: list[int], b: list[int]) -> list[int] which as input takes two arrays of equal lengths (you do not need to check for that!) and yields a new array with the arrays shuffled as in the above example.
+
+The two input arrays should not be changed!
+
+Task 2
+Write another Python method perfect_shuffle(a: list[int]) -> list[int] that achieves perfect shuffling for an array with an even number of elements. For this you need to split the arrays into two halves and then call the interleave method from above on those two halves.
+
+The array won’t have an odd number of elements for now. The input array should not be changed!
+
+Task 3
+If you perfectly shuffle a deck often enough it should return to its original order.
+
+Write a Python method shuffle_number(n: int) -> int that takes an even number 
+ and returns how often you need to perfectly shuffle a deck of n cards until it returns to its original order.
+
+Each array has to be shuffled at least once!
+
+The input won’t be an odd number!
+
+Example: shuffle_number(52) == 8 is True.
