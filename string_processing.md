@@ -3,14 +3,17 @@ The string consists of N lines separated by end-of-line characters (ASCII code 1
 • Column size has length 10 and contains the size of the file in bytes. The size is less than 231 bytes and is aligned to the right.
 • Column date has length 10 and contains the last modification date of the file in the format "yyyy-mm-dd".
 • Column name is of variable length and contains the name of the file. The name of the file consists of at most 255 printable ASCIl characters and contains at least one dot character. The part of the name after the last dot is called the extension. File names are case-sensitive.
+
 We are only interested in files that satisfy the following criteria:
 • They contain archive data. We say that a file contain archive data if its extension is either "zip", "rar" or "tgz".
 • Their size is less than 240 * 210 bytes.
 • They were last modified before 1995-10-13.
 Calculate the quantity of these files.
+
 Write a function:
 def solution(S)
 that, given a string S describing the file list, returns the answer to the query, encoded as a string. If there are no files satisfying the criteria listed above, the function should return "NO FILES".
+
 For example, given string S with N = 9 lines (enclosed between """):
 """
 1988-08-29 956 system.zip
