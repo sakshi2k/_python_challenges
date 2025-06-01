@@ -3,21 +3,21 @@
 
 def longestSubstringWithKdistinct(str, k):
     subStr = ''
-    r = maxLen = 0
+    r = maxLen = distinct_strs = 0
     
     while r < len(str):
+        if str[r] not in subStr:
+            distinct_strs += 1
         subStr += str[r]
-        distinct_strs = set(subStr)
-        if len(distinct_strs) > k:
-            subStr = subStr[:-1]
-            r -= 1
 
-            maxLen = max(maxLen, len(subStr))
-
+        while distinct_strs > k:
+            removed_char = subStr[0]
             subStr = subStr[1:]
+            if removed_char not in subStr:
+                distinct_strs -= 1
         r += 1
     
-    maxLen = max(maxLen, len(subStr))
+        maxLen = max(maxLen, len(subStr))
     return maxLen
 
 if __name__=="__main__":
